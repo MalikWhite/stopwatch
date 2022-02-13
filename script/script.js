@@ -48,7 +48,7 @@ const stopWatchBtn = document.querySelector('.stopwatch__btn')
 const stopWatchSecond = document.querySelector('.stopwatch__seconds')
 const stopWatchMinutes = document.querySelector('.stopwatch__minutes')
 const stopWatchHours = document.querySelector('.stopwatch__hours')
-
+const tabLinkSpan = document.querySelector(".tabsLink__span")
 
 
 
@@ -107,10 +107,13 @@ function startStopReset() {
     interval = window.setInterval(secondamer, 1000);
     document.querySelector(".stopwatch__btn").innerHTML = "Stop"
     stat = "started"
+    tabLinkSpan.style.display = 'flex'
+    
   } else if (stat === "started") {
     window.clearInterval(interval);
     document.querySelector(".stopwatch__btn").innerHTML = "Reset"
     stat = "stopedone"
+    tabLinkSpan.style.background = 'red'
   } else if (stat === "stopedone") {
     window.clearInterval(interval);
     sec = 00
@@ -121,6 +124,7 @@ function startStopReset() {
     document.querySelector('.stopwatch__hours').innerHTML = "00"
     document.querySelector(".stopwatch__btn").innerHTML = "Start"
     stat = "stopped"
+    tabLinkSpan.style.display = 'none'
+    tabLinkSpan.style.background = 'white'
   }
 }
-
