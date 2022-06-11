@@ -10,7 +10,6 @@ function clock() {
   let minutes = date.getMinutes() * (360 / 60);
   let hour = date.getHours() * (360 / 12);
   s.style.transform = `rotate(${seconds}deg)`
-  s.style.transition = `1s linear`
   m.style.transform = `rotate(${minutes}deg)`
   h.style.transform = `rotate(${hour}deg)`
   // clock second  
